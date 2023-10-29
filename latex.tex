@@ -1,0 +1,228 @@
+\documentclass[16pt]{article}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{lipsum}
+
+% Page setup
+\geometry{a4paper, margin=1in}
+
+\begin{document}
+\begin{titlepage}
+\centering
+
+% University logo
+\includegraphics[width=4cm]{logo.png} % Use your university logo file
+
+% University name
+\section{\vspace{1cm}}
+{\Huge \textbf{Shri Govindram Seksariya Institute of Technology and Science, Indore}}
+\vspace{1cm}
+
+% Session
+{\LARGE \textbf{Session : 2023-24}}
+\vspace{1cm}
+
+% Title
+{\Huge \textbf{PONG GAME}}
+\vspace{1cm}
+
+% Mini Project
+{\Huge \textbf{MINI PROJECT}}
+\vspace{1cm}
+
+% Submitted by
+\begin{flushleft}
+  \LARGE \textbf{SUBMITTED BY : MUGDHA DEOSKAR}
+\end{flushleft}
+\vspace{1cm}
+
+% Enrollment number and submission date
+\begin{flushleft}
+  \LARGE \textbf{ENROLLMENT NUMBER : 0801CS221092}
+  \vspace{2cm}
+\end{flushleft}
+
+\begin{flushleft}
+  \LARGE \textbf{SUBMISSION DATE : 30/10/2323}
+  \vspace{1cm}
+\end{flushleft}
+\end{titlepage}
+
+% Start the introduction on the next page
+\newpage
+
+\section*{Introduction}
+
+\begin{flushleft}
+\Large The Pong Game is a classic two-player arcade game...
+\end{flushleft}
+
+
+\section*{Game Elements}
+\section*{Game Window}
+\begin{flushleft}
+\Large The game is played in a graphical window with a dimension of 800 pixels in width and 400 pixels in height. It provides a visual representation of the playing field.
+\end{flushleft}
+
+\section*{Paddles}
+\begin{flushleft}
+\Large Two paddles, one for each player, are displayed vertically on the screen. Player 1 controls the left paddle, while Player 2 controls the right paddle. Players use designated keys to move their paddles up and down.
+\end{flushleft}
+
+\section*{Ball}
+\begin{flushleft}
+\Large A ball moves between the two paddles. The ball's position is tracked, and its speed can increase as the game progresses.
+\end{flushleft}
+
+\section*{Score}
+\begin{flushleft}
+\Large The game keeps track of each player's score. The objective is to score points by making the ball pass the opponent's paddle. The first player to reach 5 points wins the game.
+\end{flushleft}
+
+\section*{Timer}
+\begin{flushleft}
+\Large The game includes a timer that counts down from 3 minutes. If the timer runs out, the game ends. The timer's remaining time is displayed on the screen.
+\end{flushleft}
+
+\section*{User Interaction}
+\begin{flushleft}
+\Large Players use keyboard controls to interact with the game. Player 1 uses the "W" and "S" keys to move their paddle up and down, while Player 2 uses the "Up Arrow" and "Down Arrow" keys for the same purpose.
+\end{flushleft}
+
+\subsection*{Game Controls}
+\begin{flushleft}
+\Large Pressing the "SPACE" key starts the game.
+\Large Pressing the "P" key pauses and unpauses the game.
+\end{flushleft}
+
+\section*{Sound (Currently Disabled)}
+\begin{flushleft}
+\Large The game has the functionality to play a bounce sound when the ball collides with the paddles. However, this feature is currently disabled in the code.
+\end{flushleft}
+
+\section*{Instructions}
+\begin{flushleft}
+\Large At the beginning of the game, instructions are displayed to inform the players about the controls and rules.
+\end{flushleft}
+
+\subsection*{Player Names}
+\begin{flushleft}
+\Large Players are prompted to enter their names at the start of the game, allowing for a personalized gaming experience.
+\end{flushleft}
+
+\subsection*{Winner Declaration}
+\begin{flushleft}
+\Large The game will declare a winner when one player scores 5 points or when the timer runs \Large out. The winner's name is displayed in a dialog box.
+\end{flushleft}
+
+
+
+\section*{How to Play}
+
+\begin{flushleft}
+\Large Start the game by pressing the "SPACE" key.
+\Large Control your paddle using the designated keys:
+\Large Player 1 (Left Paddle): "W" (Up) and "S" (Down)
+\Large Player 2 (Right Paddle): "Up Arrow" (Up) and "Down Arrow" (Down)
+\Large Try to bounce the ball past your opponent's paddle to score points.
+\Large The game ends when one player reaches 5 points or when the timer runs out.
+\end{flushleft}
+
+\section*{Conclusion}
+
+\begin{flushleft}
+\Large The Pong Game is a simple yet enjoyable two-player arcade game that recreates the \Large excitement of a table tennis match. It offers interactive gameplay, customizable player \Large names, and a timer for added challenge. Although the sound feature is currently \Large disabled, the game provides a fun and engaging experience for players.
+\end{flushleft}
+
+\newpage
+
+\section*{Meanings for the key parts of Pong Game code}
+\begin{flushleft}
+  \large import javax.swing;
+    
+  \large import java.awt;
+    
+  \large import java.awt.event.*;
+    
+  \large import java.util.Random;
+     
+  \large import java.io.*;
+
+  \large 1) Import necessary Java libraries for creating a graphical Pong Game. This includes Swing for the GUI, AWT for graphical elements, and event handling.
+\end{flushleft}
+
+\section*{Declared Instance variables}
+\begin{flushleft}
+\Large Declare instance variables to store the game state:
+\newline 1. ballX and ballY store the ball's coordinates.
+\newline 2. paddle1Y and paddle2Y store the vertical positions of the paddles.
+\newline 3. ballSpeedX and ballSpeedY represent the ball's speed.
+\newline 4. player1Score and player2Score store the scores for the two players.
+\newline 5. ballDirectionRight tracks the ball's direction.
+\newline 6. gamePaused and gameStarted control the game's pause and start states.
+\newline 7. gameTimer and maxGameTime manage the game's timer. gameTimer counts elapsed time, and maxGameTime sets the maximum game duration in seconds (3 minutes).
+\newline 8. showInstructions is a flag that controls whether instructions are displayed at the beginning of the game.
+\newline userCount is a static variable that keeps track of the number of users who have played the game
+\end{flushleft}
+
+\section*{Other Specification and Functionalities}
+\begin{flushleft}
+\Large Some methods like paint, keypresses, resetball, DisplayWinner, Lets start have been used to enhance made use of object-oriented programming (OOP) concepts.
+\newline The main method is the entry point for the program. It sets up the game window and starts the game by creating a PongGame object and adding it to the JFrame.
+\end{flushleft}
+
+\newpage
+
+\section*{In the provided code for the Pong Game, there are two libraries or frameworks mentioned: AWT (Abstract Window Toolkit) and Spring. Let's briefly overview what these are and their potential usage in the context of the game.}
+
+\begin{itemize}
+    \item \section*{1. AWT (Abstract Window Toolkit):}
+    \begin{flushleft}
+     \Large   - Overview: AWT is a part of the Java Foundation Classes (JFC) and provides a  \Large  platform-independent framework for building graphical user interfaces (GUIs) in  \Large  Java. It is one of the oldest GUI libraries in Java and is part of the Java  \Large  Standard Library.
+     \Large      - Usage in Pong Game: AWT is used for creating the graphical user interface  \Large  of the Pong Game. In the code, you can see the usage of AWT components such as  \Large  `JFrame`, `JPanel`, and `Graphics` for creating and rendering the game window,  \Large  paddles, ball, and other graphical elements.
+    \end{flushleft}
+    \item \section*{2. Spring Framework (Possibly Spring Boot):}
+    \begin{flushleft}
+      \Large     - Overview: Spring is a widely-used framework for building Java-based  \Large  enterprise applications. It provides a comprehensive programming and configuration  \Large  model for modern Java-based enterprise applications, including aspects like  \Large  dependency injection, transaction management, and more. Spring Boot is a project  \Large  within the Spring ecosystem that simplifies the setup and development of Spring  \Large  applications.
+       \Large    - Usage in Pong Game: While it's not explicitly mentioned in the code, Spring  \Large  or Spring Boot is not a typical choice for developing games like Pong. Spring  \Large  is more commonly used for building web applications, microservices, and  \Large   \Large  enterprise-level software. It's possible that the game uses other features of  \Large  Java, but Spring does not appear to be a primary component in the provided code.
+    \end{flushleft}
+\end{itemize}
+\newpage
+
+\section*{Debugging}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{debugging.png}
+  \caption{Debugging}
+\end{figure}
+
+\newpage
+
+\section*{Screenshots of Profiling}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{p1.png}
+  \caption{Screenshot 1}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{p2.png}
+  \caption{Screenshot 2}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{p3.png}
+  \caption{Screenshot 3}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{p4.png}
+  \caption{Screenshot 4}
+\end{figure}
+
+\end{document}
